@@ -1,0 +1,114 @@
+<%- include('partials/header') %>
+
+    <div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+        <div class="row w-100 justify-content-center align-items-center">
+
+            <!-- Left: Branding -->
+            <div class="col-md-6 text-center text-md-start mb-5 mb-md-0">
+                <div class="d-flex align-items-center gap-3 justify-content-center justify-content-md-start">
+                    <!-- Animated SVG Group Icon -->
+                    <svg viewBox="0 0 64 32" width="70" height="70" class="animated-group-icon">
+                        <defs>
+                            <mask id="fill-mask">
+                                <!-- Middle User -->
+                                <circle cx="32" cy="10" r="6" fill="white" />
+                                <path d="M22,32a10,10,0,0,1,20,0Z" fill="white" />
+                                <!-- Left User -->
+                                <circle cx="16" cy="12" r="4" fill="white" />
+                                <path d="M8,32a8,8,0,0,1,16,0Z" fill="white" />
+                                <!-- Right User -->
+                                <circle cx="48" cy="12" r="4" fill="white" />
+                                <path d="M40,32a8,8,0,0,1,16,0Z" fill="white" />
+                            </mask>
+                        </defs>
+                        <g fill="#ccc">
+                            <circle cx="32" cy="10" r="6" />
+                            <path d="M22,32a10,10,0,0,1,20,0Z" />
+                            <circle cx="16" cy="12" r="4" />
+                            <path d="M8,32a8,8,0,0,1,16,0Z" />
+                            <circle cx="48" cy="12" r="4" />
+                            <path d="M40,32a8,8,0,0,1,16,0Z" />
+                        </g>
+                        <rect class="fill-rect" x="0" y="32" width="64" height="32" fill="#0d6efd"
+                            mask="url(#fill-mask)" />
+                    </svg>
+
+                    <h1 class="text-primary fw-bold display-4 mb-0">FriendBook</h1>
+                </div>
+                <p class="fs-5 mt-3">Connect with friends and the world around you on FriendBook.</p>
+            </div>
+
+            <!-- Right: Register Form -->
+            <div class="col-md-4">
+                <div class="card shadow p-4">
+                    <h4 class="text-center mb-3 d-flex justify-content-center align-items-center gap-2">
+                        <i class="fa fa-user-plus text-secondary fs-4"></i>
+                        Create a new account
+                    </h4>
+
+                    <form method="POST" action="/api/auth/register">
+
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <div class="input-group position-relative">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                                <input type="text" name="username" class="form-control ps-5" placeholder="Username"
+                                    required>
+                            </div>
+                        </div>
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <div class="input-group position-relative">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-id-card text-muted"></i>
+                                </span>
+                                <input type="text" name="name" class="form-control ps-5" placeholder="Full Name"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <div class="input-group position-relative">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                                <input type="email" name="email" class="form-control ps-5" placeholder="Email Address"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <div class="input-group position-relative">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                                <input type="password" name="password" class="form-control" placeholder="Password"
+                                    required>
+                                <span class="input-group-text bg-white border-start-0">
+                                    <i class="fa fa-eye toggle-password" title="Show/Hide Password"
+                                        style="cursor:pointer;"></i>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="fa fa-user-plus me-2"></i> Sign Up
+                        </button>
+
+                    </form>
+
+                    <hr>
+                    <div class="text-center">
+                        Already have an account? <a href="/api/auth/login" class="text-primary">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>

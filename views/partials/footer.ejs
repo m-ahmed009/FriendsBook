@@ -1,0 +1,14 @@
+<!-- jQuery for toggle -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).on('click', '.toggle-password', function () {
+    const input = $(this).closest('.input-group').find('input');
+    const type = input.attr('type') === 'password' ? 'text' : 'password';
+    input.attr('type', type);
+    $(this).toggleClass('fa-eye fa-eye-slash');
+  });  
+</script>
+
+</body>
+</html>
